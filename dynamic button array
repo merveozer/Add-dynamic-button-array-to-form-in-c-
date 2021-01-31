@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Buton.ödev
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            butonOlustur();
+
+            void butonOlustur()
+            {
+                
+                    Button[] bDizi = new Button[6];
+                    int xEkseni = 40;
+                    int yEkseni = 40;
+
+                    for (int i = 0; i < bDizi.Length; i++)
+
+                    {
+                        bDizi[i] = new Button();
+
+                        this.Controls.Add(bDizi[i]); 
+
+                        bDizi[i].Height = 100;
+                        bDizi[i].Width = 100;
+
+                        bDizi[i].Left = xEkseni;
+                        bDizi[i].Top = yEkseni;
+
+                        if (i == 0 || i % 2 == 0)
+                        {
+                            bDizi[i].BackColor = Color.White;
+                        }
+                        else
+                        {
+                            bDizi[i].BackColor = Color.Red;
+                        }
+
+                        xEkseni = xEkseni + bDizi[i].Width;
+                    }
+                
+                    
+                }
+
+            }
+
+        }
+    }
